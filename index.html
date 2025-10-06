@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Task Manager — Your Space of Clarity</title>
+
+  <!-- Use same font as project -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="landing.css" />
+</head>
+<body>
+  <!-- Canvas for particle / glow background -->
+  <canvas id="bgCanvas" class="bg-canvas" aria-hidden="true"></canvas>
+
+  <main class="hero">
+    <div class="hero-inner">
+      <!-- left: emotional copy -->
+      <section class="hero-copy">
+        <h1 class="brand">Welcome to Your Space of Clarity.</h1>
+        <p class="lead">
+          In a noisy world, it’s easy to lose sight of small promises you made to yourself.
+          This is the place you come back to — to breathe, to plan, and to turn intentions into
+          gentle daily victories. Your tasks are not just boxes to tick; they’re tiny steps toward
+          the life you imagine.
+        </p>
+
+        <blockquote class="quote">“One small task done today is a bridge to a calmer tomorrow.”</blockquote>
+
+        <div class="cta-row">
+          <a href="signup.html" class="btn btn-primary">Start Your Journey</a>
+          <a href="signin.html" class="btn btn-ghost">Sign In</a>
+        </div>
+
+        <p class="soft-note">Free. Private. Yours — saved locally on your device.</p>
+      </section>
+
+      <!-- right: floating 3D cards / preview -->
+      <section class="hero-visual" aria-hidden="true">
+        <div class="card-stack" id="cardStack">
+          <!-- three faux task cards to float -->
+          <div class="virt-card card-1">
+            <h3>Morning Review</h3>
+            <p class="muted">Read emails • 15m</p>
+            <span class="pill">Today</span>
+          </div>
+
+          <div class="virt-card card-2">
+            <h3>Design Sprint</h3>
+            <p class="muted">Prototype header • 45m</p>
+            <span class="pill">High</span>
+          </div>
+
+          <div class="virt-card card-3">
+            <h3>Call with Maya</h3>
+            <p class="muted">Discuss roadmap • 30m</p>
+            <span class="pill">Tomorrow</span>
+          </div>
+        </div>
+
+        <!-- subtle floor glow -->
+        <div class="floor-glow"></div>
+      </section>
+    </div>
+
+    <!-- small footer micro-links -->
+    <footer class="hero-footer">
+      <div>Made with care — for focused minds.</div>
+      <div class="links">
+        <a href="signin.html">Existing user</a> · <a href="signup.html">Create account</a>
