@@ -14,13 +14,11 @@
     <aside class="sidebar">
       <h2 style="font-family:'Times New Roman', Times, serif">Task Manager</h2>
       <ul>
-        <li class="active" data-section="dashboard" >Dashboard</li>
+        <li class="active" data-section="dashboard">Dashboard</li>
         <li data-section="tasks">Tasks</li>
         <li data-section="completed">Completed</li>
         <li data-section="analytics">Analytics</li>
-        <footer ><button id="logoutBtn" class="logout-btn">Logout</button></footer>
-        
-
+        <footer><button id="logoutBtn" class="logout-btn">Logout</button></footer>
       </ul>
     </aside>
 
@@ -30,6 +28,7 @@
       <!-- Dashboard Section -->
       <div id="dashboard" class="section active">
         <h1 style="font-family:'Times New Roman', Times, serif">Dashboard</h1>
+
         <div class="card">
           <h3>Overall Progress</h3>
           <p id="progress-text">0/0 tasks completed (0%)</p>
@@ -37,6 +36,7 @@
             <div id="progress-bar" class="progress"></div>
           </div>
         </div>
+
         <div class="grid">
           <div class="card">
             <h3>Weekly Completed Tasks</h3>
@@ -47,65 +47,96 @@
             <canvas id="categoryChart"></canvas>
           </div>
         </div>
+        <div class="card">
+  <h3>Upcoming Reminders</h3>
+  <canvas id="remindersChart"></canvas>
+</div>
+
+
+        <!-- === Reminder Dates Section === -->
+        <div class="card reminder-card">
+          <h2>⏰ Reminder Dates</h2>
+
+          <form id="reminder-form" class="reminder-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="reminderTitle">Title</label>
+                <input type="text" id="reminderTitle" placeholder="e.g. Meeting with client">
+              </div>
+              <div class="form-group">
+                <label for="reminderDate">Date</label>
+                <input type="date" id="reminderDate">
+              </div>
+            <div class="form-group">
+      <label for="reminderTime">Time</label>
+      <input type="time" id="reminderTime" required>
+    </div>
+ </div>
+
+            <div class="form-actions">
+              <button type="submit">Add Reminder</button>
+            </div>
+          </form>
+
+          <div id="reminderList" class="reminder-list"></div>
+        </div>
       </div>
 
       <!-- Tasks Section -->
-      
-<div id="tasks" class="section">
-  <h1 style="font-family:'Times New Roman', Times, serif">Sticky Notes Tasks</h1>
-  
-  <form id="task-form" class="task-form">
-    <div class="form-group">
-      <label for="title">Title</label>
-      <input type="text" id="title" placeholder="e.g., Write status update" required>
-    </div>
+      <div id="tasks" class="section">
+        <h1 style="font-family:'Times New Roman', Times, serif">Sticky Notes Tasks</h1>
+        
+        <form id="task-form" class="task-form">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" id="title" placeholder="e.g., Write status update" required>
+          </div>
 
-    <div class="form-group">
-      <label for="description">Description</label>
-      <textarea id="description" placeholder="Optional details"></textarea>
-    </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" placeholder="Optional details"></textarea>
+          </div>
 
-    <div class="form-row">
-      <div class="form-group">
-        <label for="dueDate">Due date</label>
-        <input type="date" id="dueDate">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="dueDate">Due date</label>
+              <input type="date" id="dueDate">
+            </div>
+
+            <div class="form-group">
+              <label for="priority">Priority</label>
+              <select id="priority">
+                <option>Low</option>
+                <option>Medium</option>
+                <option>High</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="category">Category</label>
+              <input type="text" id="category" placeholder="General">
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit">Add Task</button>
+          </div>
+        </form>
+
+        <!-- Filters -->
+        <div class="filters">
+          <input type="text" id="search" placeholder="Search tasks...">
+          <select id="filterCategory"></select>
+          <select id="filterPriority">
+            <option>All</option>
+            <option>Low</option>
+            <option>Medium</option>
+            <option>High</option>
+          </select>
+        </div>
+
+        <div id="task-list" class="task-list"></div>
       </div>
-
-      <div class="form-group">
-        <label for="priority">Priority</label>
-        <select id="priority">
-          <option>Low</option>
-          <option>Medium</option>
-          <option>High</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="category">Category</label>
-        <input type="text" id="category" placeholder="General">
-      </div>
-    </div>
-
-    <div class="form-actions">
-      <button type="submit">Add Task</button>
-    </div>
-  </form>
-
-  <!-- Filters -->
-  <div class="filters">
-    <input type="text" id="search" placeholder="Search tasks...">
-    <select id="filterCategory"></select>
-    <select id="filterPriority">
-      <option>All</option>
-      <option>Low</option>
-      <option>Medium</option>
-      <option>High</option>
-    </select>
-  </div>
-
-  <div id="task-list" class="task-list"></div>
-</div>
-
 
       <!-- Completed Section -->
       <div id="completed" class="section">
@@ -132,6 +163,5 @@
   </div>
 
   <script src="script.js"></script>
-  <!-- <script src="./app.js" defer></script> -->
 </body>
 </html>
