@@ -297,4 +297,68 @@ h2 {
   border: none;
   color: #0f172a;
   box-shadow: 0 0 15px rgba(0,245,255,0.6);
+  padding: 20px;
+
+}
+/* === Reminder Section === */
+.reminder-card {
+  background: linear-gradient(to bottom right, #f0ffff, #e8fdfd);
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0,255,255,0.2);
+  padding: 25px;
+}
+
+.reminder-form input {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+}
+
+.reminder-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.reminder-item {
+  background: #fff;
+  border-left: 5px solid #3dbdb5;
+  padding: 12px 16px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.reminder-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 10px rgba(0,255,255,0.4);
+}
+
+.reminder-item span {
+  font-weight: 500;
+}
+
+.reminder-date {
+  color: #2b7a78;
+  font-weight: 600;
+}
+
+.delete-reminder {
+  background: transparent;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.delete-reminder:hover {
+  transform: scale(1.2);
+}
+.form-actions {
+padding-top: 30px;
 }
