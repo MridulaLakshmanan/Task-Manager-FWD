@@ -230,6 +230,25 @@ function updateUI() {
   updateProgress();
   renderCharts();
 }
+// ==== LOGOUT BUTTON REDIRECTION ====
+document.addEventListener("DOMContentLoaded", () => {
+  const logoutBtn = document.getElementById("logoutBtn");
+  if (!logoutBtn) return;
+
+  logoutBtn.addEventListener("click", () => {
+    // Optional: confirm before logging out
+    if (!confirm("Are you sure you want to logout?")) return;
+
+    // Clear localStorage/sessionStorage if you want
+    localStorage.clear();
+    sessionStorage.clear();
+
+    // Redirect to sign-in page
+    window.location.href = "signin.html";
+  });
+});
+
+
 
 // ==== INITIAL LOAD ====
 updateUI();
