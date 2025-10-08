@@ -362,3 +362,61 @@ h2 {
 .form-actions {
 padding-top: 30px;
 }
+/* === Analytics Grid Layout (Refined) === */
+#analytics .grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 50–50 split for top charts */
+  gap: 25px;
+  justify-items: center;
+  align-items: start;
+}
+
+/* Top two charts take equal width */
+#analytics .card {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Make "Reminders in Next 7 Days" chart full width below */
+#analytics .card:nth-child(3) {
+  grid-column: 1 / -1; /* spans both columns */
+  justify-content: center;
+  align-items: center;
+}
+
+/* === Chart Sizing === */
+#analytics #analyticsWeeklyChart {
+  width: 100% !important;
+  height: 250px !important;
+}
+
+#analytics #analyticsCategoryChart {
+  width: 240px !important; /* medium size */
+  height: 240px !important;
+  margin: 0 auto;
+  display: block;
+}
+
+#analytics #analyticsRemindersChart {
+  width: 90% !important;
+  height: 260px !important;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  #analytics .grid {
+    grid-template-columns: 1fr;
+  }
+
+  #analytics .card:nth-child(3) {
+    grid-column: auto;
+  }
+
+  #analytics #analyticsCategoryChart {
+    width: 200px !important;
+    height: 200px !important;
+  }
+}
+
